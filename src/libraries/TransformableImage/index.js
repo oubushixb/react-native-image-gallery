@@ -107,6 +107,12 @@ export default class TransformableImage extends PureComponent {
             return;
         }
 
+        const { imageLoaded } = this.state;
+
+        if(!imageLoaded) {
+            return;
+        }
+
         if (source && source.uri) {
             Image.getSize(
                 source.uri,
